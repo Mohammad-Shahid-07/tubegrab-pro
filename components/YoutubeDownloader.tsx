@@ -2,8 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { AlertCircle, Loader2, Download } from "lucide-react";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Loader2, Download } from "lucide-react";
 import axios from "axios";
 import VideoCard from "./VideoCard";
 import { useSearchParams } from "next/navigation";
@@ -41,7 +40,7 @@ const YouTubeDownloader: React.FC = () => {
       setUrl(urlParam);
       loadFromHistory(urlParam);
     }
-  }, [searchParams]);
+  }, [loadFromHistory]);
 
   const handleDownload = async (downloadUrl: string = url) => {
     if (!downloadUrl) setError("Please enter a valid YouTube URL");
