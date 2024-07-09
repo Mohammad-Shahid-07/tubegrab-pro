@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <div className="flex">
       <div className="flex-grow">
-      <Suspense fallback={<div>Loading...</div>}>
-        <YouTubeDownloader />
+        <Suspense fallback={<div className="text-white">Loading...</div>}>
+          <YouTubeDownloader />
         </Suspense>
       </div>
       <RightSidebar />
